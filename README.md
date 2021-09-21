@@ -24,8 +24,8 @@ Name of feature: City Explorer
 
 Estimate of time needed to complete: 2 hr
 
-Start time: 3 hr 30 min
+Start time: 3 30 PM
 
-Finish time: _____
+Finish time: 9 34 PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 6 hr 34 min
