@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
+import Forecast from './Components/Forecast';
 
 export default class App extends React.Component{
   constructor(props){
@@ -13,7 +14,8 @@ export default class App extends React.Component{
       searchQuery: '',
       location: {},
       map: null,
-      error: false
+      error: false,
+      weather: ''
     }
   }
 
@@ -35,35 +37,27 @@ export default class App extends React.Component{
       this.setState({error: true})
       console.log(error)
     }
-    const url2 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12&size=1000x1000&format=jpeg`;
+    const url2 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=11&size=500x500&format=jpeg`;
 
-    const response2 = await axios.get(url2);
+    await axios.get(url2);
     
-    const map = response2.config.url
-    console.log(map)
+    const map = url2
+    
     this.setState({
       map,
       
     });
-    console.log(response2)
+    const url3 = `http://localhost:3001/weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`;
+
+    const response3 = await axios.get(url3);
+    
+    const weather = url3;
+    console.log(response3)
+    this.setState({
+      weather: weather.data
+    })
     
   }
-  
-  // showMap = async (event) => {
-    
-
-  //   const url2 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=15&size=500x500&format=jpeg`;
-
-  //   const response2 = await axios.get(url2);
-  //   const map = response2.data
-    
-  //   console.log(response2)
-  //   this.setState({
-  //     map
-      
-  //   });
-    
-  // }
 
   render(){
     return(
@@ -86,17 +80,23 @@ export default class App extends React.Component{
           <Form.Text> lon: {this.state.location.lon}</Form.Text>
         }
       </Form>
-        {/* <City location={this.state.location}/> */}
-      <Container>
         {this.state.location.place_id &&
+        <Container>
           <img src={this.state.map} alt="map"/>
+        </Container>
         }
-      </Container>
+        {/* {this.state.location.place_id &&
+        <Container>
+          <img src={this.state.weather} alt="map"/>
+        </Container>
+        } */}
+      
       <Container>
         {this.state.error &&
-          <h2>{this.state.error}</h2>
+          <h2>an error occured</h2>
         }
       </Container>
+      <Forecast />
       </>
     )
   }
