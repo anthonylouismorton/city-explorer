@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.card-img{
+  width: 50%;
+  display: block;
+  margin: auto
+}
+.card-text:last-child {
+  margin-bottom: 0;
+  margin: auto;
+}
+.card-title {
+  margin: auto;
+}
+.card-subtitle {
+  margin: auto;
+}
