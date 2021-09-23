@@ -30,4 +30,4 @@ Finish time: 9 34 PM
 
 Actual time needed to complete: 6 hr 34 min
 
-![Day2](images/servermapping.png)
+![Day2](src/images/servermapping.png)
