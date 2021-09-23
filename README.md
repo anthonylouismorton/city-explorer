@@ -29,3 +29,5 @@ Start time: 3 30 PM
 Finish time: 9 34 PM
 
 Actual time needed to complete: 6 hr 34 min
+
+![Day2](images/servermapping.png)
