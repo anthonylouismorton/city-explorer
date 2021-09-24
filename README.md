@@ -40,6 +40,6 @@ Start time: 4 PM
 
 Finish time: 10 PM
 
-Actual time needed to complete: 6 hr
+Actual time needed to complete: 6 hr 10 min
 
 ![Day2](src/images/day2whiteboard.png)
