@@ -22,6 +22,7 @@ export default class LocationForm extends Component {
         Explore!
       </Button>
       </Form>
+      
       </>
     )
   }
