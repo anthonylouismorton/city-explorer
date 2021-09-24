@@ -9,17 +9,12 @@ export default class Forecast extends Component{
   render() {
     return (
       <Container className="weatherReport">
-        {this.props.weather.map( (weatherData,idx) => {
-          return(
-          
+        {this.props.weather.map( (weatherData,idx) => 
           <div key={idx}>
             <Card.Title>{weatherData.datetime}</Card.Title>
-            console.log(weatherData.datetime);
             <Card.Text>{weatherData.description}</Card.Text>
           </div>
-          
-          );
-        })}
+        )}
      </Container>
     );
   }
