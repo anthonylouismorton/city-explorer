@@ -20,7 +20,7 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: City Explorer
+Name of feature: City Explorer day 1
 
 Estimate of time needed to complete: 2 hr
 
@@ -30,4 +30,16 @@ Finish time: 9 34 PM
 
 Actual time needed to complete: 6 hr 34 min
 
-![Day2](src/images/servermapping.png)
+![Day1](src/images/servermapping.png)
+
+Name of feature: City Explorer day 2
+
+Estimate of time needed to complete: 4 hr
+
+Start time: 4 PM
+
+Finish time: 10 PM
+
+Actual time needed to complete: 6 hr 10 min
+
+![Day2](src/images/day2whiteboard.png)
