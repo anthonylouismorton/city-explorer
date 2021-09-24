@@ -52,10 +52,10 @@ export default class Main extends Component{
     let weatherServer=`${server}weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`
 
     const response2 = await axios.get(weatherServer);
-    console.log(response2.data.data)
+    console.log(response2.data)
 
     this.setState({
-      weather: response2.data.data
+      weather: response2.data
     });
     }
     catch(error){
