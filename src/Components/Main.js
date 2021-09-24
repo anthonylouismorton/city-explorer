@@ -6,7 +6,7 @@ import axios from 'axios';
 import Forecast from './Forecast';
 import LocationForm from './LocationForm'
 import City from './City'
-
+import Movie from './Movie'
 
 let server = 'http://localhost:3005/'
 
@@ -57,7 +57,16 @@ export default class Main extends Component{
     this.setState({
       weather: response2.data
     });
+
+    let movieServer=`${server}movies?searchQuery=${this.state.searchQuery}`
+    const movieResponse = await axios.get(movieServer);
+    console.log(movieResponse)
+    this.setState({
+      movie: movieResponse.data
+    })
     }
+    
+
     catch(error){
       this.setState({error: true})
       console.log(error)
@@ -66,13 +75,7 @@ export default class Main extends Component{
   handleChange = (userSearchQuery) => {
     this.setState({searchQuery: userSearchQuery})
   }
-  // getMovies = async () => {
-  //   const url = `${process.env.REACT_APP_API_URL}/movies?searchQuery=${this.state.searchQuery}`
-  //   let reponse = await axios.get(url);
-  //   this.setState({
-  //     movie,
-  //   })
-  // }
+  
 
   render(){
     return(
@@ -83,6 +86,9 @@ export default class Main extends Component{
       }
       {this.state.location.place_id &&
       <Forecast weather={this.state.weather} />
+      }
+      {this.state.location.place_id &&
+      <Movie movie={this.state.movie} />
       }
       <Container>
         {this.state.error &&
