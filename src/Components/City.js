@@ -7,7 +7,6 @@ import '../App.css';
 export default class City extends Component {
 
   render() {
-    console.log(this.props.map)
     return(
       <>
       <Col>

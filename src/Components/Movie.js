@@ -10,11 +10,11 @@ export default class Movie extends Component{
           <Card key={idx}>
             <Card.Title>Movie: {movieData.title}</Card.Title>
             <Card.Text>Overview: {movieData.overview}</Card.Text>
-            <Card.Text>Vote Average: {movieData.vote_average}</Card.Text>
-            <Card.Text>Vote Count: {movieData.vote_count}</Card.Text>
+            <Card.Text>Vote Average: {movieData.average_votes}</Card.Text>
+            <Card.Text>Vote Count: {movieData.total_votes}</Card.Text>
             <Card.Text>Vote Popularity: {movieData.popularity}</Card.Text>
             <Card.Text>Released On: {movieData.released_on}</Card.Text>
-            <Card.Img src={movieData.img_url}/>
+            <Card.Img src={movieData.image_url}/>
           </Card>
         )}
      </Container>
