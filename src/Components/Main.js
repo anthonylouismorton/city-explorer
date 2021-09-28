@@ -49,27 +49,23 @@ export default class Main extends Component{
       
     });
 
-    let weatherServer=`${server}weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`
+    let weatherURL=`${process.env.REACT_APP_WEATHER_API_URL}weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`
 
-    const response2 = await axios.get(weatherServer);
+    const response2 = await axios.get(weatherURL);
     console.log(response2.data)
-
     this.setState({
       weather: response2.data
     });
 
-    let movieServer=`${server}movies?searchQuery=${this.state.searchQuery}`
-    const movieResponse = await axios.get(movieServer);
-    console.log(movieResponse)
+    let movieURL=`${process.env.REACT_APP_MOVIE_API_URL}movies?searchQuery=${this.state.searchQuery}`
+    const movieResponse = await axios.get(movieURL);
+    console.log(movieResponse.data)
     this.setState({
       movie: movieResponse.data
     })
     }
-    
-
     catch(error){
       this.setState({error: true})
-      console.log(error)
     }
   }
   handleChange = (userSearchQuery) => {
@@ -89,6 +85,7 @@ export default class Main extends Component{
       }
       {this.state.location.place_id &&
       <Movie movie={this.state.movie} />
+      
       }
       <Container>
         {this.state.error &&
