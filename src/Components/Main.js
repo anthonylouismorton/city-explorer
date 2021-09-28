@@ -8,8 +8,6 @@ import LocationForm from './LocationForm'
 import City from './City'
 import Movie from './Movie'
 
-let server = 'http://localhost:3005/'
-
 export default class Main extends Component{
   constructor(props){
     super(props);
