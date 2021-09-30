@@ -20,7 +20,7 @@ export default class LocationForm extends Component {
       <Form.Control onChange={this.formEvent} type="text" placeholder="city name"/>
       <Button onClick={this.props.getLocation} variant="primary" type="Submit">
         Explore!
-      </Button>
+      </Button >
       </Form>
       
       </>

@@ -42,7 +42,7 @@ Finish time: 10 PM
 
 Actual time needed to complete: 6 hr
 
-![Day2](src/images/day2whiteboard.png)
+![Day2](src/images/day2whiteboard.jpg)
 
 Name of feature: City Explorer day 3
 
@@ -66,4 +66,4 @@ Finish time: 1130 PM
 
 Actual time needed to complete: 10 hr 30 min
 
-![Day3](src/images/wrrc4.jpg)
+![Day4](src/images/wrrc4.jpg)
