@@ -8,6 +8,8 @@ import LocationForm from './LocationForm'
 import City from './City'
 import Movie from './Movie'
 
+let server = 'http://localhost:3005'
+
 export default class Main extends Component{
   constructor(props){
     super(props);
@@ -47,7 +49,7 @@ export default class Main extends Component{
       
     });
 
-    let weatherURL=`${process.env.REACT_APP_WEATHER_API_URL}weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`
+    let weatherURL=`${process.env.REACT_APP_SERVER_API_URL}/weather?searchQuery=${this.state.searchQuery}&lon=${this.state.location.lon}&lat=${this.state.location.lat}`
 
     const response2 = await axios.get(weatherURL);
     console.log(response2.data)
@@ -55,7 +57,7 @@ export default class Main extends Component{
       weather: response2.data
     });
 
-    let movieURL=`${process.env.REACT_APP_MOVIE_API_URL}movies?searchQuery=${this.state.searchQuery}`
+    let movieURL=`${process.env.REACT_APP_SERVER_API_URL}/movies?searchQuery=${this.state.searchQuery}`
     const movieResponse = await axios.get(movieURL);
     console.log(movieResponse.data)
     this.setState({
@@ -69,8 +71,6 @@ export default class Main extends Component{
   handleChange = (userSearchQuery) => {
     this.setState({searchQuery: userSearchQuery})
   }
-  
-
   render(){
     return(
       <>
