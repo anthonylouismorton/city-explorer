@@ -6,9 +6,7 @@ import axios from 'axios';
 import Forecast from './Forecast';
 import LocationForm from './LocationForm'
 import City from './City'
-import Movie from './Movie'
-
-let server = 'http://localhost:3005'
+import Movies from './Movies'
 
 export default class Main extends Component{
   constructor(props){
@@ -82,7 +80,7 @@ export default class Main extends Component{
       <Forecast weather={this.state.weather} />
       }
       {this.state.location.place_id &&
-      <Movie movie={this.state.movie} />
+      <Movies movie={this.state.movie} />
       
       }
       <Container>
